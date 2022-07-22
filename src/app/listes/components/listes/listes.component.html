@@ -1,0 +1,158 @@
+<div class="main">
+  <div>
+    <!-- BEGIN FORM -->
+    <form action="" #f="ngForm" (ngSubmit)="submit(f)">
+      <div class="input-group rounded">
+        <!-- BEGIN SEARCH INPUT -->
+        <input type="search" class="form-control rounded" placeholder="Rechercher" aria-label="Search"
+          aria-describedby="search-addon" />
+        <!-- END SEARCH INPUT -->
+
+        <span class="input-group-text border-0" id="search-addon">
+          <!-- <i class="fas fa-search"></i> -->
+
+          <!-- BEGIN BUTTONS -->
+          <table class="tr">
+            <thead>
+              <a [routerLink]="'/ajouter'">
+                <td>
+                  <button type="button" class="btn my-primary btn-list">
+                    <mat-icon class="icon-class">add_circle_outline</mat-icon>&nbsp;&nbsp;&nbsp; AJOUTER
+                  </button>
+                </td>
+              </a>
+
+              <!-- voir modal test -->
+
+              <!-- <app-modal></app-modal> -->
+
+              <!-- voir -->
+              <td>
+                <button [routerLink]="'/voir/' + selectedId" (click)="successVoir()" type="button" [disabled]="disabled()"
+                  class="btn avts btn-list">
+                  <mat-icon class="icon-class">remove_red_eye</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;VOIR
+                </button>
+              </td>
+              <td>
+                <button [routerLink]="'/traiter/' + selectedId"  [disabled]="disabled()"  type="button" class="btn avts btn-list">
+                  <mat-icon class="icon-class">edit</mat-icon>&nbsp;&nbsp;&nbsp;
+                  TRAITER
+                </button>
+              </td>
+              <td>
+                <button type="button" [disabled]="disabled()" class="btn avts btn-list"
+                  (click)="deleteIt(getArray(selectedd))">
+                  <mat-icon class="icon-class">delete</mat-icon>&nbsp;&nbsp;&nbsp; SUPPRIMER
+                </button>
+              </td>
+            </thead>
+          </table>
+          <!-- END BUTTONS -->
+        </span>
+      </div>
+
+      <div class="scrollmenu" id="excel-table">
+        <!-- BEGIN TABLE -->
+        <table class="table table-striped">
+          <thead>
+            <tr>
+
+             <th scope="col">&nbsp;&nbsp;&nbsp;</th>
+              <th scope="col">ID</th>
+              <th scope="col">Média contact</th>
+              <th scope="col">Technologie</th>
+              <th scope="col">ID CLIENT</th>
+              <th scope="col">Raison du contact</th>
+              <th scope="col">Détail hors cible</th>
+              <th scope="col">Motif de résiliation</th>
+              <th scope="col">statut Retenu</th>
+              <th scope="col">Moyen de rétention ou refus</th>
+              <th scope="col">Choix opérateur</th>
+              <th scope="col">Date et heure de l'histo RET</th>
+              <th scope="col">LOG AGENT RET</th>
+              <th scope="col">Commentaire RET 1</th>
+              <th scope="col">Statut de la demande</th>
+              <th scope="col">Traitement tech</th>
+              <th scope="col">Date et heure de l'histo Tech</th>
+              <th scope="col">Log agent tech</th>
+              <th scope="col">Commentaire TECH</th>
+              <th scope="col">Statut demande suite traitenet tech</th>
+              <th scope="col">Type de contact RET</th>
+              <th scope="col">Traitement SUIVI RET</th>
+              <th scope="col">Date et heure de l'histo suivi RET</th>
+              <th scope="col">Log agent Suivi RET</th>
+              <th scope="col">Statut finaldemande</th>
+              <th scope="col">Commentaire</th>
+              <th scope="col">Horodatage</th>
+              <th scope="col">NDI</th>
+              <th scope="col">Code Postal</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="
+                let data of array
+                  | paginate
+                    : {
+                        itemsPerPage: itemsPage,
+                        currentPage: page,
+                        totalItems: totalLength
+                      };
+                let i;
+                index
+              ">
+              <input type="radio" name="choice" (change)="getArray(i)" />
+              <th>&nbsp; {{ data.id }} &nbsp;&nbsp;</th>
+              <th>&nbsp; {{ data.Media_contact }}</th>
+              <th>&nbsp; {{ data.Technologie }}</th>
+              <th>&nbsp; {{ data.ID_CLIENT }}</th>
+              <th>&nbsp; {{ data.Raison_du_contact }}</th>
+              <th>&nbsp; {{ data.Detail_hors_cible }}</th>
+              <th>&nbsp; {{ data.Motif_de_resiliation }}</th>
+              <th>&nbsp; {{ data.statut_Retenu }}</th>
+              <th>&nbsp; {{ data.Moyen_de_retention_ou_refus }}</th>
+              <th>&nbsp; {{ data.Choix_operateur }}</th>
+              <th>&nbsp; {{ data.Date_et_heure_de_lhisto_RET }}</th>
+              <th>&nbsp; {{ data.LOG_AGENT_RET }}</th>
+              <th>&nbsp; {{ data.Commentaire_RET }}</th>
+              <th>&nbsp; {{ data.Statut_de_la_demande }}</th>
+              <th>&nbsp; {{ data.Traitement_tech }}</th>
+              <th>&nbsp;{{ data.Date_et_heure_de_lhisto_Tech }}</th>
+              <th>&nbsp; {{ data.Log_agent_tech }}</th>
+              <th>&nbsp; {{ data.Commentaire_TECH }}</th>
+              <th>&nbsp; {{ data.Statut_demande_suite_traitenet_tech }}</th>
+              <th>&nbsp; {{ data.Type_de_contact_RET }}</th>
+              <th>&nbsp; {{ data.Traitement_SUIVI_RET }}</th>
+              <th>&nbsp; {{ data.Date_et_heure_de_lhisto_suivi_RET }}</th>
+              <th>&nbsp; {{ data.Log_agent_Suivi_RET }}</th>
+              <th>&nbsp; {{ data.Statut_final_demande }}</th>
+              <th>&nbsp; {{ data.Commentaire }}</th>
+              <th>&nbsp; {{ data.Horodatage }}</th>
+              <th>&nbsp; {{ data.NDI }}</th>
+              <th>&nbsp; {{ data.Code_Postal }}</th>
+            </tr>
+          </tbody>
+        </table>
+        <!-- END TABLE -->
+
+        <!-- BEGIN PAGINATIO -->
+        <div>
+          <pagination-controls class="pagination" (pageChange)="page = $event" previousLabel="Précédent"
+            nextLabel="Suivant"></pagination-controls>
+          <p class="paginationInfo">
+            Affichage de l'élément {{ page }} á {{ itemsPage }} sur
+            {{ totalLength }} éléments
+          </p>
+        </div>
+        <!-- END PAGINATIO -->
+      </div>
+    </form>
+    <!-- END FORM -->
+  </div>
+</div>
+<div>
+</div>
+
+
+
+

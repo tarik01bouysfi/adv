@@ -1,0 +1,87 @@
+  <!-- <div>
+  Main Buttons
+<table class="main-buttons">
+<thead>
+<td><button type="button" class="btn my-primary btn-list" >LISTES DES DEMANDES</button></td>
+<td><button type="button" (click)="exportexcel()" class="btn my-primary btn-list" >EXPORT EXCEL</button></td>
+<td><button type="button" class="btn my-primary btn-list" >PARAMÉTRES GÉNÉRAUX</button></td>
+<td><button type="button" class="btn my-primary btn-list" >GESTION DES USERS</button></td>
+</thead>
+</table>
+<br><br> <hr>
+</div> -->
+
+
+
+<!-- ---------------------------------------------------- -->
+
+
+<div class="main">
+  <div class="child">
+
+ <form class="example-for">
+
+   <!-- Média contact -->
+  <div class="form-group media-contact form-group-left" >
+  <label for="mediaContact" class="label">Média contact</label>
+  <select class="form-control"  id="mediaContact" ngModel name="mediaCcontact">
+   <option  value="" disabled>Média contact</option>
+   <option *ngFor="let MCD of mediaContactData" [ngValue]="MCD">{{MCD.name}}</option>
+  </select>
+ </div>
+ <br><br>
+ <!-- ID CLIENT -->
+ <div class="form-group-left form-group">
+   <mat-form-field class="example-full-width form-control" appearance="fill">
+     <mat-label>First name</mat-label>
+     <input matInput>
+   </mat-form-field>
+ </div><br><br>
+
+ <!-- Commentaire RET -->
+ <div class="form-group-left form-group">
+   <label for="commnetaire-ret" class="label">Commentaire RET</label> <br>
+   <input class="form-control" type="text" id="commnetaire-ret">
+  </div>
+
+  <!-- Technologie -->
+ <div class="form-group technologie form-group-right" >
+   <label for="technologie" class="label">Technologie</label>
+   <select class="form-control"  id="technologie" ngModel name="Technologie">
+    <option  value="" disabled>Technologie</option>
+    <option *ngFor="let tec of technologieData" [ngValue]="tec">{{tec.name}}</option>
+   </select>
+  </div>
+
+  <!-- Raison du contact -->
+  <div class="form-group raison form-group-right" >
+   <label for="raison" class="label">Raison du contact</label>
+   <select class="form-control"  id="raison" ngModel name="Raison">
+    <option  value="" disabled>Raison du contact</option>
+    <option *ngFor="let rais of raisonData" [ngValue]="rais">{{rais.name}}</option>
+   </select>
+  </div>
+
+  <!-- NDI -->
+  <div class="form-group-right form-group ndi">
+   <label for="ndi" class="label">NDI</label> <br>
+   <input class="form-control" type="text" id="ndi">
+  </div><br><br>
+
+  <!-- Code Postal -->
+  <div class="form-group-left form-group code-postal">
+   <label for="CodePostal" class="label">Code Postal</label><br>
+   <input class="form-control" type="text" id="CodePostal">
+  </div><br><br>
+
+
+   <button type="button" class="btn my-primary btn-list">
+     AJOUTER <mat-icon class="icon-class">send</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;
+   </button>
+
+
+ </form>
+  </div>
+ </div>
+
+

@@ -1,0 +1,46 @@
+
+<mat-sidenav-container autosize>
+    <mat-sidenav #sidenav mode="side" opened="isExpanded">
+      <mat-nav-list>
+
+        <mat-list-item (click)="isExpanded = !isExpanded">
+          <mat-icon mat-list-icon class="chevron-button" [ngClass]="{ rotated: isExpanded }">chevron_right
+          </mat-icon>
+        </mat-list-item>
+
+        <mat-list-item [routerLink]="'listes'">
+            <mat-icon [ngStyle]="{'color':'white'}">assignment</mat-icon>
+          <span *ngIf="isExpanded" class="menu-item">Listes</span>
+        </mat-list-item>
+
+        <mat-list-item [routerLink]="'export'">
+            <mat-icon [ngStyle]="{'color':'white'}">cloud_download</mat-icon>
+          <span *ngIf="isExpanded" class="menu-item"> Export Excel</span>
+        </mat-list-item>
+
+        <mat-list-item [routerLink]="'parametres'">
+            <mat-icon [ngStyle]="{'color':'white'}">settings</mat-icon>
+          <span *ngIf="isExpanded" class="menu-item">Paramétres Généraux</span>
+        </mat-list-item>
+
+        <mat-list-item [routerLink]="'gestion'">
+            <mat-icon [ngStyle]="{'color':'white'}">supervised_user_circle</mat-icon>
+            <span *ngIf="isExpanded" class="menu-item">Gestion Des Users</span>
+        </mat-list-item>
+
+      </mat-nav-list>
+
+    </mat-sidenav>
+
+    <!-- Content - rendered Content for the current router path into the <router-outlet>, e.g. /dashboard or /info-->
+    <mat-sidenav-content>
+      <mat-toolbar>
+        <a [routerLink]="'listes'"><img class="logo"  [src]="logoSrc" [alt]="logoAlt"></a>
+      </mat-toolbar>
+      <!-- <br><br><b class="title">{{title}}</b> -->
+      <router-outlet>
+      </router-outlet>
+
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>

@@ -1,0 +1,19 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+
+    <th>&nbsp; {{index.id}} &nbsp;&nbsp;</th>
+
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+  </div>
+</ng-template>
+
+<button  type="button" (click)="getArray()" class="btn avts btn-list">
+<mat-icon class="icon-class">remove_red_eye</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;VOIR
+</button>

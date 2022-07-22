@@ -1,0 +1,6 @@
+/* table : liste des commandes */
+div.scrollmenu {
+  background-color: rgba(240, 240, 240, 0.995);
+  overflow: auto;
+  white-space: nowrap;
+}

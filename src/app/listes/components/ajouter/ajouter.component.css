@@ -1,0 +1,70 @@
+.label{
+  color : rgb(184, 13, 13)
+}
+
+.main
+{
+  /* background-color: rgb(246, 246, 246); */
+  background-color: #fefefe;
+
+  margin: 10%;
+
+  padding-left: 20;
+}
+
+.form-group {
+  width: 45%;
+}
+
+
+.icon-class {
+  position: absolute;
+  margin-left: -1px;
+}
+
+.AddButton {
+  color: rgb(255, 255, 255);
+  background-color: #009036;
+  margin-left: -10%;
+  margin-top: 2%;
+
+ }
+
+.AddButton:focus,
+.AddButton:hover {
+  color: rgb(255, 255, 255);
+  background-color: #02762d;
+} */
+
+
+
+/* inputs material */
+
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+
+}
+
+.example-full-width {
+  width: 100%;
+
+
+}
+
+td {
+  padding-right: 8px;
+  padding-top: 8px;
+}
+ .options{
+ color: #44aca4;
+}
+
+
+mat-label
+{
+  color : rgb(75, 75, 75);
+}
+

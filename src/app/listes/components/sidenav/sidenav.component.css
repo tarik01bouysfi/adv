@@ -1,0 +1,70 @@
+mat-sidenav-container {
+    height: 100%;
+
+
+
+
+
+
+    mat-sidenav {
+      mat-nav-list {
+        .menu-item {
+          margin-left: 10px;
+
+        }
+
+        .chevron-button {
+          transition: 300ms ease-in-out;
+          transform: rotate(0deg);
+
+        }
+
+        .chevron-button.rotated {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  mat-sidenav{
+  background-color: rgba(231,16,150,255);
+  /* background-color : #D62D88 */
+
+}
+
+/* mat-sidenav-content{
+  background-color: rgba(231,16,150,255);
+} */
+
+.logo{
+  height: 48px;
+  padding-left: 4%;
+
+}
+.menu-item
+{
+  color: rgb(224, 224, 224) ;
+}
+mat-toolbar{
+  background-color: rgb(15, 14, 14);
+  height: 9%;
+}
+
+.title{
+  color: blueviolet;
+}
+
+/* .example-header-image {
+  margin: 20%;
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+  height:50px;
+  width: 50px;
+
+
+} */
+
+/* .liste{
+  margin: 20px;
+  font-size: 25px;
+ } */

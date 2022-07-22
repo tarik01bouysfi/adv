@@ -1,0 +1,116 @@
+.main{
+  margin: 0px 50px;
+}
+.example-card {
+  max-width: 400px;
+}
+
+/* table : liste des commandes */
+div.scrollmenu {
+  background-color: rgba(240, 240, 240, 0.995);
+  overflow: auto;
+  white-space: nowrap;
+}
+
+/* .liste{
+  margin: 20px;
+  font-size: 25px;
+ } */
+
+/* main buttons */
+.btn-list {
+  margin-left: 18px;
+}
+.main-buttons {
+  margin-left: 26%;
+  margin-top: 30px;
+}
+.my-primary {
+  color: rgb(255, 255, 255);
+  background-color: rgb(228, 12, 148);
+}
+
+.my-primary:focus,
+.my-primary:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(232, 76, 188);
+}
+
+a.navbar-brand {
+  color: rgb(255, 255, 255);
+}
+
+.navbar-brand:hover {
+  color: rgb(255, 255, 255);
+}
+
+/* second buttons */
+.avts:focus,
+.avts:hover {
+  color: rgb(96, 96, 96);
+  background-color: #43bfc6;
+}
+.avts {
+  color: #43bfc6;
+  background-color: rgb(52, 52, 52);
+}
+.tr {
+  margin-top: 84px;
+  margin-left: 34%;
+  position: absolute;
+}
+.input-group {
+  position: relative;
+  display: inline-block;
+}
+.form-control:focus {
+  outline: none;
+}
+
+/* icons */
+.icon-class {
+  position: absolute;
+  margin-left: -10px;
+}
+
+/* Search */
+.rounded {
+  height: 90px;
+  width: 100%;
+  margin-top: 5%;
+}
+
+input[type="radio"] {
+  border: 0px;
+  width: 73%;
+  height: 2em;
+  margin-left: 2.7px;
+  margin-top: 2.7px;
+}
+
+.table-striped {
+  margin-top: 24px;
+}
+
+
+/* title */
+/* .liste{
+  margin: 20px;
+  font-size: 25px;
+ } */
+
+/* pagination */
+.pagination {
+  padding-left: 50%;
+  position: fixed;
+}
+.paginationInfo {
+  position: fixed;
+  padding-right: 70%;
+  margin-left: 15%;
+
+}
+.scrollmenu{
+  margin: 117px 0px 24px 0px
+
+}
