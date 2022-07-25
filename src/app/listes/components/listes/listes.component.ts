@@ -23,7 +23,7 @@ export class ListesComponent implements OnInit {
   isDisabled = true;
   selectedId = 0;
   inedx: any;
-  totalLength: any;
+  totalLength: any=[];
   page = 1;
   nextLabel = 'frensh';
   direction = false;
@@ -31,7 +31,10 @@ export class ListesComponent implements OnInit {
   fileName = 'ExcelSheet.xlsx';
   selectedd: any;
   duration = '6000';
-  // array:any;
+  id:any;
+  array2:any=[];
+  myvar:any;
+
 
   constructor(private service: ListesService , private toast: NgToastService) {
 
@@ -40,21 +43,19 @@ export class ListesComponent implements OnInit {
 
 
   ngOnInit(): void {
-    //develop branch
-
-    this.array = this.service.data();
-    this.totalLength = this.array.length;
-
-    //listes
-    // this.array = this.service.data();
-    // this.totalLength = this.array.length;
+    this.service.data2()
+    .subscribe(res=>this.array2=res);
   }
-  id:any;
+
+
+
+
+
 // GENARATE THE VALUE (ID) OF AN ITEM
    getArray(event: any) {
     this.selectedd = event;
     this.selectedId = event.id;
-    this.inedx = this.array.indexOf(this.selectedd);
+    this.inedx = this.array2.indexOf(this.selectedd);
     return this.selectedd;
   }
 // DISABLE BUTTONS
@@ -70,10 +71,10 @@ export class ListesComponent implements OnInit {
   deleteIt(event: any) {
     let messageId = 'ID '+this.selectedId;
     if (this.inedx > -1) {
-      this.array = this.array.filter(function(v: any) {
+      this.array2 = this.array2.filter(function(v: any) {
         return v.id != event.id
       })
-      this.totalLength = this.array.length;
+      this.totalLength = this.array2.length;
       this.toast.success({detail:messageId ,summary:' est supprimé avec succées',duration:+this.duration});
       this.inedx = -1;
     }

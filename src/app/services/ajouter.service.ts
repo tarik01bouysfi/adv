@@ -66,9 +66,9 @@ export class AjouterService {
       {"id":3,
       "name":"Répondeur"},
       {"id":4,
-      "name":"Déménagement"},
+      "name":"Hausse Tarrifaire"},
       {"id":5,
-      "name":"Réalisation"},
+      "name":"Déménagement"},
       {"id":6,
       "name":"Changement de techno"},
     ]
@@ -78,10 +78,10 @@ export class AjouterService {
     return [
       {
         "id":1,
-        "name":"Change OK",
+        "name":"Non",
       },{
         "id":2,
-        "name":"Change KO",
+        "name":"Oui",
       },{
         "id":3,
         "name":"Dém OK : Nouvelle formule",
@@ -263,7 +263,7 @@ export class AjouterService {
     ]
   }
 
-  moyenDeRétention(){
+  moyenDeRetention(){
     return [
       {
         "id":1,
@@ -357,6 +357,135 @@ export class AjouterService {
         "name":"MOBILE : rediriger le client vers le service tech chat",
       },
     ]
+  }
+  MotifdeRefus(){
+   return [
+    {
+      "id":1,
+      "name":"Validation résil légitime: départ à l'étranger",
+    },    {
+      "id":2,
+      "name":"Validation résil mot légitime: chômage/licenc",
+    },    {
+      "id":3,
+      "name":"Souhaite passer à la concurrence:offre moins chère",
+    },    {
+      "id":4,
+      "name":"Souhaite passer à la concurrence : plus de débit",
+    },    {
+      "id":5,
+      "name":"Souhaite passer à la concurrence:bouquets TV +riches",
+    },    {
+      "id":6,
+      "name":"Souhaite passer à la concurrence: regroupement foyer",
+    },    {
+      "id":7,
+      "name":"Souhaite passer à la concurrence: meilleur équipement",
+    },    {
+      "id":8,
+      "name":"Souhaite passer à la concurrence : inéligible fibre",
+    },    {
+      "id":9,
+      "name":"Souhaite passer à la concurrence : inéligible TV",
+    },    {
+      "id":10,
+      "name":"Refus diag tech (pb non résolu): Mauvaise conx internet",
+    },    {
+      "id":11,
+      "name":"Refus diag tech (pb non résolu): Mauvaise réception TV",
+    },    {
+      "id":12,
+      "name":"Déménagement : logement déjà équipé par un autre opérateur",
+    },    {
+      "id":13,
+      "name":"Déménagement : logement déjà équipé RED/SFR/NC",
+    },    {
+      "id":14,
+      "name":"Insatisfaction remise non appliquée",
+    },    {
+      "id":15,
+      "name":"Service Clients injoignable",
+    },    {
+      "id":16,
+      "name":"Insatisfaction du Service Client/ TLV",
+    },    {
+      "id":17,
+      "name":"Déménagement vers zone non couverte",
+    },    {
+      "id":18,
+      "name":"Pbm admin (fact érronée,réception matériel ko..)",
+    },    {
+      "id":19,
+      "name":"Validation résil légitime : décès",
+    },    {
+      "id":20,
+      "name":"KO installation",
+    },    {
+      "id":21,
+      "name":"Mauvaise information lors de la vente par la TLV",
+    },    {
+      "id":22,
+      "name":"Souhaite resilier, ne veut plus de ligne fixe",
+    },    {
+      "id":23,
+      "name":"RDV STIT non honoré",
+    },    {
+      "id":24,
+      "name":"Perte de ligne",
+    },    {
+      "id":25,
+      "name":"Resil non PEC",
+    },    {
+      "id":26,
+      "name":"Porta Out",
+    },    {
+      "id":27,
+      "name":"Maison de retraite",
+    },    {
+      "id":28,
+      "name":"Adresse Incomplète : Client refuse PRDV",
+    },    {
+      "id":29,
+      "name":"VENTE PRIVÉE CONCURRENCE FREE",
+    },    {
+      "id":30,
+      "name":"Mobile : Mauvaise Couverture",
+    },    {
+      "id":31,
+      "name":"MOBILE : Forfait Mobile + Téléphone",
+    },    {
+      "id":32,
+      "name":"MOBILE : Souhaite passer à la concurrence contenu riches 'double appel'",
+    },    {
+      "id":33,
+      "name":"MOBILE : Souhaite passer à la concurrence:contenu riches 'Répondeur plus'",
+    },    {
+      "id":34,
+      "name":"MOBILE : Souhaite passer à la concurrence:contenu riches 'plus de date en roaming'",
+    },    {
+      "id":35,
+      "name":" MOBILE : Plus d'utilité de la ligne mobile 'ligne utilisée en système  surveillance'",
+    },    {
+      "id":36,
+      "name":"MOBILE :  Plus d'utilité de la ligne mobile 'Montre connectée'",
+    },    {
+      "id":37,
+      "name":" Plus d'utilité de la ligne mobile 'Souscription RED DEAL et SHOWROOM PRIVEE'",
+    },    {
+      "id":38,
+      "name":" Plus d'utilité de la ligne mobile 'Client dispose d'un numéro PRO'",
+    },    {
+      "id":39,
+      "name":"Proposition RET insuffisante tarif et data",
+    },    {
+      "id":40,
+      "name":"MOBILE : client souhaite garder la ligne PRO",
+    },    {
+      "id":41,
+      "name":"plus d'utilité : Ligne secondaire",
+    },
+   ]
+
   }
 
   constructor() { }

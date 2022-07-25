@@ -36,8 +36,13 @@
     <mat-sidenav-content>
       <mat-toolbar>
         <a [routerLink]="'listes'"><img class="logo"  [src]="logoSrc" [alt]="logoAlt"></a>
+        <a href="#" title="Logout" class="exit-icon">
+
+        <mat-icon >exit_to_app</mat-icon>
+        </a>
       </mat-toolbar>
-      <!-- <br><br><b class="title">{{title}}</b> -->
+
+
       <router-outlet>
       </router-outlet>
 

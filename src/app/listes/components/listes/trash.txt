@@ -103,36 +103,33 @@
               ">
               <input type="radio" name="choice" (change)="getArray(i)" />
               <th>&nbsp; {{ data.id }} &nbsp;&nbsp;</th>
-              <th>&nbsp; {{ data.media_Contact }}</th>
-              <th>&nbsp; {{ data.technologie }}</th>
-              <th>&nbsp; {{ data.idClient }}</th>
-              <th>&nbsp; {{ data.raison_du_contact }}</th>
-              <th>&nbsp; {{ data.detail_Hors_Cible}}</th>
-              <th>&nbsp; {{ data.motif_de_resiliation }}</th>
-
-              <th>&nbsp; {{ data.retenu }}</th>
-              <th>&nbsp; {{ data.MotifdeRefus}}{{data.moyenDeRetention}}</th>
-              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
-              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
-              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
-
-              <th>&nbsp; {{''+ data.Commentaire}}</th>
-
-              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
-              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
-              <th>&nbsp;{{ 'XXXXXXXX' }}</th>
-              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
-              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
-              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
-              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
-              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
-              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
-              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
-              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
-              <th>&nbsp; {{  'XXXXXXXX'  }}</th>
-              <th>&nbsp; {{  'XXXXXXXX'  }}</th>
-              <th>&nbsp; {{ data.ndi }}</th>
-              <th>&nbsp; {{ data.codePostal }}</th>
+              <th>&nbsp; {{ data.Media_contact }}</th>
+              <th>&nbsp; {{ data.Technologie }}</th>
+              <th>&nbsp; {{ data.ID_CLIENT }}</th>
+              <th>&nbsp; {{ data.Raison_du_contact }}</th>
+              <th>&nbsp; {{ data.Detail_hors_cible }}</th>
+              <th>&nbsp; {{ data.Motif_de_resiliation }}</th>
+              <th>&nbsp; {{ data.statut_Retenu }}</th>
+              <th>&nbsp; {{ data.Moyen_de_retention_ou_refus }}</th>
+              <th>&nbsp; {{ data.Choix_operateur }}</th>
+              <th>&nbsp; {{ data.Date_et_heure_de_lhisto_RET }}</th>
+              <th>&nbsp; {{ data.LOG_AGENT_RET }}</th>
+              <th>&nbsp; {{ data.Commentaire_RET }}</th>
+              <th>&nbsp; {{ data.Statut_de_la_demande }}</th>
+              <th>&nbsp; {{ data.Traitement_tech }}</th>
+              <th>&nbsp;{{ data.Date_et_heure_de_lhisto_Tech }}</th>
+              <th>&nbsp; {{ data.Log_agent_tech }}</th>
+              <th>&nbsp; {{ data.Commentaire_TECH }}</th>
+              <th>&nbsp; {{ data.Statut_demande_suite_traitenet_tech }}</th>
+              <th>&nbsp; {{ data.Type_de_contact_RET }}</th>
+              <th>&nbsp; {{ data.Traitement_SUIVI_RET }}</th>
+              <th>&nbsp; {{ data.Date_et_heure_de_lhisto_suivi_RET }}</th>
+              <th>&nbsp; {{ data.Log_agent_Suivi_RET }}</th>
+              <th>&nbsp; {{ data.Statut_final_demande }}</th>
+              <th>&nbsp; {{ data.Commentaire }}</th>
+              <th>&nbsp; {{ data.Horodatage }}</th>
+              <th>&nbsp; {{ data.NDI }}</th>
+              <th>&nbsp; {{ data.Code_Postal }}</th>
             </tr>
           </tbody>
         </table>
@@ -144,7 +141,7 @@
             nextLabel="Suivant"></pagination-controls>
           <p class="paginationInfo">
             Affichage de l'élément {{ page }} á {{ itemsPage }} sur
-            {{ array2.length }} éléments
+            {{ totalLength }} éléments
           </p>
         </div>
         <!-- END PAGINATIO -->
@@ -159,5 +156,6 @@
 
 
 
-
-
+<button (click)="logAraay2()">
+click here
+</button>

@@ -41,6 +41,13 @@ mat-sidenav-container {
   padding-left: 4%;
 
 }
+
+.exit-icon{
+  color: aliceblue;
+  position: relative;
+  margin-left: 85%;
+  padding-top: 10px;
+}
 .menu-item
 {
   color: rgb(224, 224, 224) ;

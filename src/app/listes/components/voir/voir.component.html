@@ -1,8 +1,3 @@
-<!-- <div *ngFor="let dt of array">
-
- {{dt.id}}
-</div> -->
-
 <div style="margin: 41px 0px 24px 0px" class="scrollmenu" id="excel-table">
   <table class="table table-striped"  >
       <thead>
@@ -38,12 +33,11 @@
           <th scope="col">Code Postal</th>
         </tr>
       </thead>
-
-      <tbody>
+      <!-- <tbody>
 
         <input type="radio" name="demade" >
         <th>&nbsp; {{index.id}} &nbsp;&nbsp;</th>
-        <th>&nbsp; {{index.Media_contact}}</th>
+        <th>&nbsp; {{index.media_Contact}}</th>
         <th>&nbsp; {{index.Technologie}}</th>
         <th>&nbsp; {{index.ID_CLIENT}}</th>
         <th>&nbsp; {{index.Raison_du_contact}}</th>
@@ -70,5 +64,13 @@
         <th>&nbsp; {{index.Horoindexge}}</th>
         <th>&nbsp; {{index.NDI}}</th>
         <th>&nbsp; {{index.Code_Postal}}</th>
-      </tbody>
+      </tbody> -->
+  </table>
+
+
+  {{array2|json}} <br>
+
+<button (click)="test()">
+  test {{index|json}}
+</button>
 

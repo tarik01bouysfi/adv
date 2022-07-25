@@ -1,9 +1,6 @@
 <div class="main">
 
-
-
     <form [formGroup]="listeForm" (ngSubmit)="createListes()">
-
 
       <table class="example-full-width" cellspacing="0"><tr>
 
@@ -11,9 +8,9 @@
       <td>
           <mat-form-field class="example-full-width"  appearance="fill">
             <mat-label>Média contact</mat-label>
-            <mat-select  formControlName="mediaContact" class="matSelect">
+            <mat-select  formControlName="media_Contact" class="matSelect">
               <mat-option value="0"  disabled >Média contact</mat-option>
-              <mat-option class="options" *ngFor="let MCD of mediaContactData" value="{{MCD.id}}" >{{MCD.name}}</mat-option>
+              <mat-option class="options" *ngFor="let techno of technologieData" value="{{techno.id}}" >{{techno.name}}</mat-option>
             </mat-select>
           </mat-form-field>
       </td>
@@ -24,7 +21,7 @@
           <mat-label>Technologie</mat-label>
           <mat-select formControlName="technologie" class="matSelect">
             <mat-option disabled >Technologie </mat-option>
-            <mat-option  class="options" *ngFor="let MCD of mediaContactData" value="{{MCD.id}}">{{MCD.name}}</mat-option>
+            <mat-option  class="options" *ngFor="let MCD of mediaContactData" value="{{MCD.name}}">{{MCD.name}}</mat-option>
           </mat-select>
         </mat-form-field>
       </td>
@@ -43,9 +40,10 @@
         <td>
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Raison du contact</mat-label>
-            <mat-select  formControlName="raison" class="matSelect">
+            <mat-select  formControlName="raison_du_contact" class="matSelect">
               <mat-option value="0" disabled > Raison du contact </mat-option>
-              <mat-option class="options" *ngFor="let rais of raisonData" value="{{rais.id}}">{{rais.name}}</mat-option>
+              <mat-option
+               class="options" *ngFor="let rais of raisonData" [value]="rais">{{rais.name}}</mat-option>
             </mat-select>
           </mat-form-field>
         </td>
@@ -53,10 +51,10 @@
 
         <tr>
           <!-- Motif de résiliation -->
-          <td *ngIf="true">
+          <td *ngIf="caseOne.includes(+listeForm.value.raison_du_contact?.id)">
             <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Motif de résiliation</mat-label>
-              <mat-select  formControlName="motif" class="matSelect">
+              <mat-select  formControlName="motif_de_resiliation" class="matSelect">
                 <mat-option value="0" disabled > Motif de résiliation </mat-option>
                 <mat-option class="options" *ngFor="let motif of MotifData" value="{{motif.id}}">{{motif.name}}</mat-option>
               </mat-select>
@@ -64,7 +62,9 @@
           </td>
 
           <!-- Retenu -->
-          <td *ngIf="true">
+          <!-- <td *ngIf=""> -->
+
+            <td *ngIf="caseOne.includes(+listeForm.value.raison_du_contact)">
             <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Retenu</mat-label>
               <mat-select  formControlName="retenu" class="matSelect">
@@ -76,35 +76,23 @@
         </tr>
 
         <tr>
-          <!-- Détail Hors Cible -->
-          <td *ngIf="true">
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Détail Hors Cible</mat-label>
-              <mat-select  formControlName="detail" class="matSelect">
-                <mat-option value="0" disabled > Détail Hors Cible </mat-option>
-                <mat-option class="options" *ngFor="let DHC of DetailHCData" value="{{DHC.id}}">{{DHC.name}}</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </td>
-
           <!-- Commentaire RET -->
-          <td>
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Commentaire RET</mat-label>
-              <input  formControlName="Commentaire" matInput>
-            </mat-form-field>
-          </td>
-        </tr>
+            <td>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Commentaire RET</mat-label>
+                  <input  formControlName="Commentaire" matInput>
+                </mat-form-field>
+            </td>
 
-        <tr>
           <!-- NDI -->
-          <td>
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>NDI</mat-label>
-              <input  formControlName="ndi"  matInput>
-            </mat-form-field>
-          </td>
-
+             <td>
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>NDI</mat-label>
+                        <input  formControlName="ndi"  matInput>
+                      </mat-form-field>
+            </td>
+        </tr>
+        <tr>
           <!-- Code Postal -->
           <td>
             <mat-form-field class="example-full-width" appearance="fill">
@@ -112,9 +100,48 @@
               <input  formControlName="codePostal" matInput>
             </mat-form-field>
           </td>
+
+          <!-- Détail Hors Cible -->
+            <td *ngIf="caseTwo.includes(+listeForm.value.raison_du_contact)">
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Détail Hors Cible</mat-label>
+                        <mat-select  formControlName="detail_Hors_Cible" class="matSelect">
+                          <mat-option value="0" disabled > Détail Hors Cible </mat-option>
+                          <mat-option class="options" *ngFor="let DHC of DetailHCData" value="{{DHC.name}}">{{DHC.name}}</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+            </td>
         </tr>
-  <tr>
-    <td></td>
+         <td>
+
+         </td>
+         <!-- Moyen de rétention  -->
+        <tr>
+          <td *ngIf="RcaseTwo.includes(+listeForm.value.retenu)">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Moyen de rétention</mat-label>
+                    <mat-select  formControlName="moyenDeRetention" class="matSelect">
+                      <mat-option value="0" disabled > Moyen de rétention </mat-option>
+                        <mat-option class="options" *ngFor="let MDR of moyenDeRetention" value="{{MDR.name}}">{{MDR.name}}
+                      </mat-option>
+              </mat-select>
+                </mat-form-field>
+          </td>
+          <!-- MotifdeRefus -->
+          <td *ngIf="RcaseOne.includes(+listeForm.value.retenu)">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Motif de Refus</mat-label>
+                  <mat-select  formControlName="MotifdeRefus" class="matSelect">
+                    <mat-option value="0" disabled > Motif de Refus </mat-option>
+                      <mat-option class="options" *ngFor="let MDRe of MotifdeRefusData" value="{{MDRe.name}}">{{MDRe.name}}
+                    </mat-option>
+            </mat-select>
+              </mat-form-field>
+        </td>
+
+      </tr>
+      <tr>
+     <td></td>
     <td>
 
       <button type="submit" class="btn AddButton">AJOUTER <mat-icon class="icon-class">send</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;</button>
@@ -122,6 +149,8 @@
     </table>
 
   </form>
-  {{ listeForm.value | json }}
+  {{listeForm.value | json }}
 </div>
+
+
 

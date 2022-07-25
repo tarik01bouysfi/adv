@@ -12,24 +12,41 @@ import { ActivatedRoute } from '@angular/router';
 
 export class VoirComponent implements OnInit {
   myId: any;
-  array:any;
+  array:any=[];
   index:any;
+  array2:any=[];
+  arra:any;
+
+  id:any;
   constructor(private route : ActivatedRoute , private service : ListesService ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+
+    this.id = +this.route.snapshot.params['id'];
+
+    this.array2 = await new Promise((resolve: any, reject: any) => {
+      this.service.data2()
+        .subscribe(res=>{
+          resolve(res)
+        }, (err) => {
+          reject(err)
+        });
+    })
+
+    this.index = this.array2.find((e: any) => e.id == this.id);
+    // this.array = this.service.data();
 
 
-    let id = +this.route.snapshot.params['id'];
-    this.array = this.service.data();
-    this.index = this.array.find((e: any) => e.id == id);
 
-    // this.route.paramMap.subscribe(myParmas => {
-    //   //  console.log(myParmas.get('id'));
-    //    console.log(myParmas.get('id'));
-    //   //  this.myId = +myParmas.get('id');
-    // })
+
 
   }
+  test(){
+    console.log(this.array2);
+    console.log(this.id);
+    console.log(this.index);
+  }
+
 
   }
 

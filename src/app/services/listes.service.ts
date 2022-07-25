@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpErrorResponse } from '@angular/common/http';
 
 
 
@@ -10,16 +9,16 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class ListesService {
   listes: string[]=[];
 
-  // constructor(private httpService: HttpClient) {
-  constructor() {
 
-    // this.data()
+
+    constructor(private httpService: HttpClient) {
+  //  constructor() {
+
   }
 
-  // data(){
-  //  this.httpService.get('/Users/mac/Desktop/NewApp/db.json')
-  // }
-
+   data2(){
+     return this.httpService.get('http://localhost:3000/CreateListes');
+   }
 
 
   // mockData

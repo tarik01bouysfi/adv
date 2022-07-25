@@ -20,7 +20,17 @@ export class AjouterComponent implements OnInit {
   retenuData:any[]=[];
   MotifData:any[]=[];
   DetailHCData:any[]=[];
+  moyenDeRetention:any=[];
+  MotifdeRefusData:any=[];
 
+  //de raison du conttact'cases
+  caseOne=[1,4,5,6];
+  caseTwo=[2];
+
+  // retenu'cases
+
+  RcaseOne=[1,];
+  RcaseTwo=[2,];
 
   public listeForm !: FormGroup;
   data:any={
@@ -52,6 +62,7 @@ export class AjouterComponent implements OnInit {
     Horodatage:'',
     NDI:'',
     CodePostal:'',
+
   }
   constructor(private service :AjouterService, private http :HttpClient, private formBuilder :FormBuilder) { }
 
@@ -62,23 +73,50 @@ export class AjouterComponent implements OnInit {
   this.retenuData  = this.service.retenu();
   this.MotifData   = this.service.motifDeRésiliation();
   this.DetailHCData= this.service.détailHorsCible();
+  this.moyenDeRetention = this.service.moyenDeRetention();
+  this.MotifdeRefusData= this.service.MotifdeRefus()
 
   this.listeForm = this.formBuilder.group({
-    mediaContact:[''],
-    technologie:[''],
-    idClient:[''],
-    raison:[''],
-    motif:[''],
-    retenu:[''],
-    detail:[''],
-    Commentaire:[''],
-    ndi:[''],
-    codePostal:['']
+    media_Contact:'',
+    technologie:'',
+    idClient:0,
+    raison_du_contact:'',
+    detail_Hors_Cible:'',
+    motif_de_resiliation:'',
+    retenu:'',
+    MotifdeRefus:'',
+    moyenDeRetention:'',
 
-
+    ndi:'',
+    codePostal:'',
+    Commentaire:'',
   })
 
   }
+
+
+
+  // mytest(listeForm:any,retenu:any){
+
+  //   if(!this.caseOne.includes(+listeForm.value.raison_du_contact)){
+  //     retenu=0;
+  //     console.log(retenu);
+  //     return this.fl;
+
+  //   }
+  //   else{
+  //     retenu=1;
+  //     console.log(retenu);
+  //     return this.tr;
+  //   }
+  // }
+  myfunc(x:any){
+    if(this.caseOne.includes(+x)){
+    }else{
+     x=0;
+    }
+
+   }
 
   // mySubmit(x:any){
   //  console.log(x.value);
@@ -100,7 +138,7 @@ export class AjouterComponent implements OnInit {
       // this.router.navigate(['listes']);
       alert('Done');
     })
-    console.log(this.listeForm.value);
+     console.log('this is listesForm ',this.listeForm.value);
   }
 
 
