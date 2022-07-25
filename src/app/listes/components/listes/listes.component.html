@@ -103,20 +103,20 @@
               ">
               <input type="radio" name="choice" (change)="getArray(i)" />
               <th>&nbsp; {{ data.id }} &nbsp;&nbsp;</th>
-              <th>&nbsp; {{ data.media_Contact }}</th>
-              <th>&nbsp; {{ data.technologie }}</th>
+              <th>&nbsp; {{ data.media_Contact.name }}</th>
+              <th>&nbsp; {{ data.technologie.name }}</th>
               <th>&nbsp; {{ data.idClient }}</th>
-              <th>&nbsp; {{ data.raison_du_contact }}</th>
-              <th>&nbsp; {{ data.detail_Hors_Cible}}</th>
-              <th>&nbsp; {{ data.motif_de_resiliation }}</th>
+              <th>&nbsp; {{ data.raison_du_contact.name }}</th>
+              <th>&nbsp; {{ data.detail_Hors_Cible.name}}</th>
+              <th>&nbsp; {{ data.motif_de_resiliation.name }}</th>
 
-              <th>&nbsp; {{ data.retenu }}</th>
-              <th>&nbsp; {{ data.MotifdeRefus}}{{data.moyenDeRetention}}</th>
+              <th>&nbsp; {{ data.retenu.name }}</th>
+              <th>&nbsp; {{ data.MotifdeRefus.name}}{{data.moyenDeRetention}}</th>
               <th>&nbsp; {{ 'XXXXXXXX' }}</th>
               <th>&nbsp; {{ 'XXXXXXXX' }}</th>
               <th>&nbsp; {{ 'XXXXXXXX' }}</th>
 
-              <th>&nbsp; {{''+ data.Commentaire}}</th>
+              <th>&nbsp; {{data.Commentaire}}</th>
 
               <th>&nbsp; {{ 'XXXXXXXX' }}</th>
               <th>&nbsp; {{ 'XXXXXXXX' }}</th>

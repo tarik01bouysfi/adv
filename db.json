@@ -1,9 +1,72 @@
 {
   "CreateListes": [
     {
-      "media_Contact": "1",
+      "media_Contact": {
+        "id": 1,
+        "name": "ADSL"
+      },
+      "technologie": {
+        "id": 3,
+        "name": "APPEL ANC "
+      },
+      "idClient": "0126",
+      "raison_du_contact": {
+        "id": 1,
+        "name": "Réalisation"
+      },
+      "detail_Hors_Cible": {
+        "id": 2,
+        "name": "Demande étiquette de retour"
+      },
+      "motif_de_resiliation": "",
+      "retenu": {
+        "id": 1,
+        "name": "Non"
+      },
+      "MotifdeRefus": {
+        "id": 3,
+        "name": "Souhaite passer à la concurrence:offre moins chère"
+      },
+      "moyenDeRetention": "",
+      "ndi": "this is ndi",
+      "codePostal": "this is code postal",
+      "Commentaire": "this is comment",
+      "id": 1
+    },
+    {
+      "media_Contact": {
+        "id": 1,
+        "name": "ADSL"
+      },
+      "technologie": {
+        "id": 2,
+        "name": "APPEL SITE WEB "
+      },
+      "idClient": "nnnn",
+      "raison_du_contact": {
+        "id": 1,
+        "name": "Réalisation"
+      },
+      "detail_Hors_Cible": "",
+      "motif_de_resiliation": "",
+      "retenu": {
+        "id": 1,
+        "name": "Non"
+      },
+      "MotifdeRefus": {
+        "id": 2,
+        "name": "Validation résil mot légitime: chômage/licenc"
+      },
+      "moyenDeRetention": "",
+      "ndi": "this is ndi",
+      "codePostal": "this is code postal",
+      "Commentaire": "this is comment",
+      "id": 2
+    },
+    {
+      "media_Contact": "",
       "technologie": "",
-      "idClient": 0,
+      "idClient": "",
       "raison_du_contact": "",
       "detail_Hors_Cible": "",
       "motif_de_resiliation": "",
@@ -13,37 +76,22 @@
       "ndi": "",
       "codePostal": "",
       "Commentaire": "",
-      "id": 1
-    },
-    {
-      "media_Contact": "2",
-      "technologie": null,
-      "idClient": null,
-      "raison_du_contact": null,
-      "detail_Hors_Cible": null,
-      "motif_de_resiliation": null,
-      "retenu": null,
-      "MotifdeRefus": null,
-      "moyenDeRetention": null,
-      "ndi": null,
-      "codePostal": null,
-      "Commentaire": null,
-      "id": 2
-    },
-    {
-      "media_Contact": "3",
-      "technologie": null,
-      "idClient": null,
-      "raison_du_contact": null,
-      "detail_Hors_Cible": null,
-      "motif_de_resiliation": null,
-      "retenu": null,
-      "MotifdeRefus": null,
-      "moyenDeRetention": null,
-      "ndi": null,
-      "codePostal": null,
-      "Commentaire": null,
       "id": 3
+    },
+    {
+      "media_Contact": "",
+      "technologie": "",
+      "idClient": "",
+      "raison_du_contact": "",
+      "detail_Hors_Cible": "",
+      "motif_de_resiliation": "",
+      "retenu": "",
+      "MotifdeRefus": "",
+      "moyenDeRetention": "",
+      "ndi": "",
+      "codePostal": "",
+      "Commentaire": "",
+      "id": 4
     }
   ]
 }

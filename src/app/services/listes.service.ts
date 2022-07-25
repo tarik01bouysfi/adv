@@ -25,7 +25,7 @@ export class ListesService {
 // ARRAY DATA
 
   data(){
-    return [
+return [
 
   {
     "id": 1953,

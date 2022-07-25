@@ -1,4 +1,4 @@
-<div style="margin: 41px 0px 24px 0px" class="scrollmenu" id="excel-table">
+<!-- <div style="margin: 41px 0px 24px 0px" class="scrollmenu" id="excel-table">
   <table class="table table-striped"  >
       <thead>
         <tr>
@@ -33,44 +33,284 @@
           <th scope="col">Code Postal</th>
         </tr>
       </thead>
-      <!-- <tbody>
+      <tbody>
 
-        <input type="radio" name="demade" >
-        <th>&nbsp; {{index.id}} &nbsp;&nbsp;</th>
-        <th>&nbsp; {{index.media_Contact}}</th>
-        <th>&nbsp; {{index.Technologie}}</th>
-        <th>&nbsp; {{index.ID_CLIENT}}</th>
-        <th>&nbsp; {{index.Raison_du_contact}}</th>
-        <th>&nbsp; {{index.Detail_hors_cible}}</th>
-        <th>&nbsp; {{index.Motif_de_resiliation}}</th>
-        <th>&nbsp; {{index.statut_Retenu}}</th>
-        <th>&nbsp; {{index.Moyen_de_retention_ou_refus}}</th>
-        <th>&nbsp; {{index.Choix_operateur}}</th>
-        <th>&nbsp; {{index.Date_et_heure_de_lhisto_RET}}</th>
-        <th>&nbsp; {{index.LOG_AGENT_RET}}</th>
-        <th>&nbsp; {{index.Commentaire_RET}}</th>
-        <th>&nbsp; {{index.Statut_de_la_demande}}</th>
-        <th>&nbsp; {{index.Traitement_tech}}</th>
-        <th>&nbsp;{{index.Date_et_heure_de_lhisto_Tech}} </th>
-        <th>&nbsp; {{index.Log_agent_tech}}</th>
-        <th>&nbsp; {{index.Commentaire_TECH}}</th>
-        <th>&nbsp; {{index.Statut_demande_suite_traitenet_tech}}</th>
-        <th>&nbsp; {{index.Type_de_contact_RET}}</th>
-        <th>&nbsp; {{index.Traitement_SUIVI_RET}}</th>
-        <th>&nbsp; {{index.Date_et_heure_de_lhisto_suivi_RET}}</th>
-        <th>&nbsp; {{index.Log_agent_Suivi_RET}}</th>
-        <th>&nbsp; {{index.Statut_final_demande}}</th>
-        <th>&nbsp; {{index.Commentaire}}</th>
-        <th>&nbsp; {{index.Horoindexge}}</th>
-        <th>&nbsp; {{index.NDI}}</th>
-        <th>&nbsp; {{index.Code_Postal}}</th>
-      </tbody> -->
+
+              <input type="radio" name="choice"/>
+              <th>&nbsp; {{ index.id }} &nbsp;&nbsp;</th>
+              <th>&nbsp; {{ index.media_Contact.name }}</th>
+              <th>&nbsp; {{ index.technologie.name }}</th>
+              <th>&nbsp; {{ index.idClient.name }}</th>
+              <th>&nbsp; {{ index.raison_du_contact.name }}</th>
+              <th>&nbsp; {{ index.detail_Hors_Cible.name}}</th>
+              <th>&nbsp; {{ index.motif_de_resiliation.name }}</th>
+
+              <th>&nbsp; {{ index.retenu.name }}</th>
+              <th>&nbsp; {{ index.MotifdeRefus.name}}{{index.moyenDeRetention}}</th>
+              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
+              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
+              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
+
+              <th>&nbsp; {{index.Commentaire}}</th>
+
+              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
+              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
+              <th>&nbsp;{{ 'XXXXXXXX' }}</th>
+              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
+              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
+              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
+              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
+              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
+              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
+              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
+              <th>&nbsp; {{ 'XXXXXXXX' }}</th>
+              <th>&nbsp; {{  'XXXXXXXX'  }}</th>
+              <th>&nbsp; {{  'XXXXXXXX'  }}</th>
+              <th>&nbsp; {{ index.ndi }}</th>
+              <th>&nbsp; {{ index.codePostal }}</th>
+
+      </tbody>
   </table>
 
+</div> -->
 
-  {{array2|json}} <br>
 
-<button (click)="test()">
-  test {{index|json}}
-</button>
+
+
+<div class="main">
+<div class="scrollmenu"  id="excel-table">
+<ol class="list-group list-group-light  ">
+  <tbody>
+
+  <!-- ID -->
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">ID</th></div>
+    </div>
+    <span class="fw-bold"> {{ index.id }} </span>
+  </li>
+
+
+<!-- Média contact -->
+  <li class="list-group-item d-flex justify-content-between align-items-start grey">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">Média contact</th></div>
+    </div>
+    <span class="fw-bold">{{ index.media_Contact.name }}</span>
+  </li>
+
+
+<!-- Technologie -->
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">Technologie</th></div>
+    </div>
+    <span class="fw-bold">{{ index.technologie.name }}</span>
+  </li>
+
+<!-- ID CLIENT -->
+  <li class="list-group-item d-flex justify-content-between align-items-start grey">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">ID CLIENT</th></div>
+    </div>
+    <span class="fw-bold">{{ index.idClient }}</span>
+  </li>
+
+<!-- Raison  du contact -->
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">Raison  du contact</th></div>
+    </div>
+    <span class="fw-bold">{{ index.raison_du_contact.name }}</span>
+  </li>
+
+<!-- Détail hors cible -->
+  <li class="list-group-item d-flex justify-content-between align-items-start grey">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">Détail hors cible</th></div>
+    </div>
+    <span class="fw-bold">{{ index.detail_Hors_Cible.name }}</span>
+  </li>
+
+<!-- Motif de résiliation -->
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">Motif de résiliation</th></div>
+    </div>
+    <span class="fw-bold">{{ index.motif_de_resiliation.name }}</span>
+  </li>
+
+<!-- Statut Retenu -->
+  <li class="list-group-item d-flex justify-content-between align-items-start grey">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">Statut Retenu</th></div>
+    </div>
+    <span class="fw-bold">{{ index.retenu.name }}</span>
+  </li>
+
+<!-- Moyen de rétention  ou refus -->
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">Moyen de rétention  ou refus</th></div>
+    </div>
+    <span class="fw-bold">{{ index.MotifdeRefus.name}}{{index.moyenDeRetention}}</span>
+  </li>
+
+<!-- Choix  opérateur -->
+  <li class="list-group-item d-flex justify-content-between align-items-start grey">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">Choix  opérateur</th></div>
+    </div>
+    <span class="fw-bold">{{ idk }}</span>
+  </li>
+
+<!-- Date et heure  de l'histo RET -->
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">Date et heure  de l'histo RET</th></div>
+    </div>
+    <span class="fw-bold">{{ idk }}</span>
+  </li>
+
+<!-- LOG AGENT RET -->
+  <li class="list-group-item d-flex justify-content-between align-items-start grey">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">LOG AGENT RET</th></div>
+    </div>
+    <span class="fw-bold">{{ idk }}</span>
+  </li>
+
+<!-- Commentaire RET 1 -->
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">Commentaire RET 1</th></div>
+    </div>
+    <span class="fw-bold">{{index.Commentaire}}</span>
+  </li>
+
+<!-- Statut de  la demande -->
+  <li class="list-group-item d-flex justify-content-between align-items-start grey">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">Statut de la demande</th></div>
+    </div>
+    <span class="fw-bold">{{ idk }}</span>
+  </li>
+
+<!-- Traitement tech -->
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">Traitement tech</th></div>
+    </div>
+    <span class="fw-bold">{{ idk }}</span>
+  </li>
+
+<!-- Date et heure  de l'histo Tech -->
+  <li class="list-group-item d-flex justify-content-between align-items-start grey">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">Date et heure  de l'histo Tech</th></div>
+    </div>
+    <span class="fw-bold">{{ idk }}</span>
+  </li>
+
+  <!-- Log agent tech -->
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col"> Log agent tech </th></div>
+    </div>
+    <span class="fw-bold">{{ idk }}</span>
+  </li>
+
+<!-- Commentaire TECH -->
+  <li class="list-group-item d-flex justify-content-between align-items-start grey">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">Commentaire TECH</th></div>
+    </div>
+    <span class="fw-bold">{{ idk }}</span>
+  </li>
+
+  <!-- Statut demande suite  traitenet tech -->
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col"> Statut demande suite traitenet tech</th></div>
+    </div>
+    <span class="fw-bold">{{ idk }}</span>
+  </li>
+
+  <!-- Type de contact RET -->
+  <li class="list-group-item d-flex justify-content-between align-items-start grey">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">Type de contact RET</th></div>
+    </div>
+    <span class="fw-bold">{{ idk }}</span>
+  </li>
+
+<!-- Traitement SUIVI RET -->
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col"> Traitement SUIVI RET</th></div>
+    </div>
+    <span class="fw-bold">{{ idk }}</span>
+  </li>
+
+<!-- Date et heure  de l'histo  suivi RET -->
+  <li class="list-group-item d-flex justify-content-between align-items-start grey">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">Date et heure de l'histo suivi RET</th></div>
+    </div>
+    <span class="fw-bold">{{ idk }}</span>
+  </li>
+
+<!-- Log agent Suivi RET -->
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col"> Log agent Suivi RET</th></div>
+    </div>
+    <span class="fw-bold">{{ idk }}</span>
+  </li>
+
+<!-- Statut finaldemande -->
+  <li class="list-group-item d-flex justify-content-between align-items-start grey">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">Statut finaldemande</th></div>
+    </div>
+    <span class="fw-bold">{{ idk }}</span>
+  </li>
+
+<!-- Commentaire -->
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col"> Commentaire</th></div>
+    </div>
+    <span class="fw-bold">{{ idk }}</span>
+  </li>
+
+  <!-- Horoindexge -->
+  <li class="list-group-item d-flex justify-content-between align-items-start grey">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">Horoindexge</th></div>
+    </div>
+    <span class="fw-bold">{{ idk }}</span>
+  </li>
+
+<!-- NDI -->
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col"> NDI</th></div>
+    </div>
+    <span class="fw-bold">{{ index.ndi }}</span>
+  </li>
+
+<!-- Code Postal -->
+  <li class="list-group-item d-flex justify-content-between align-items-start grey">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><th scope="col">Code Postal</th></div>
+    </div>
+    <span class="fw-bold">{{ index.codePostal }}</span>
+  </li>
+
+
+</tbody>
+ </ol>
+</div>
+</div>
 

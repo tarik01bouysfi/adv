@@ -4,3 +4,43 @@ div.scrollmenu {
   overflow: auto;
   white-space: nowrap;
 }
+.main
+{
+  /* background-color: rgb(246, 246, 246); */
+  background-color: #fefefe;
+
+  margin: 10%;
+
+  padding-left: 20;
+}
+.grey
+{
+  background-color: rgb(241, 241, 241);
+}
+.badge-primary{
+  color:black
+}
+div.scrollmenu {
+
+
+  background-color: #fed9ff;
+  width: auto;
+  height: 900px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+  padding: 20px;
+
+}
+
+div.scrollmenuchilddiv {
+  /* display: inline-block;
+  color: rgb(13, 6, 6);
+  text-align: center;
+
+  text-decoration: none;
+
+
+  /*Float: left*/
+  /* white-space: nowrap;  */
+}

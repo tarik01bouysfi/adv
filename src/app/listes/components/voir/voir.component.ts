@@ -16,8 +16,8 @@ export class VoirComponent implements OnInit {
   index:any;
   array2:any=[];
   arra:any;
-
   id:any;
+  idk='XXX'
   constructor(private route : ActivatedRoute , private service : ListesService ) { }
 
   async ngOnInit() {
@@ -35,11 +35,6 @@ export class VoirComponent implements OnInit {
 
     this.index = this.array2.find((e: any) => e.id == this.id);
     // this.array = this.service.data();
-
-
-
-
-
   }
   test(){
     console.log(this.array2);

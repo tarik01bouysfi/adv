@@ -32,6 +32,8 @@ export class AjouterComponent implements OnInit {
   RcaseOne=[1,];
   RcaseTwo=[2,];
 
+ 
+
   public listeForm !: FormGroup;
   data:any={
     ID:'',
@@ -79,7 +81,7 @@ export class AjouterComponent implements OnInit {
   this.listeForm = this.formBuilder.group({
     media_Contact:'',
     technologie:'',
-    idClient:0,
+    idClient:'',
     raison_du_contact:'',
     detail_Hors_Cible:'',
     motif_de_resiliation:'',
