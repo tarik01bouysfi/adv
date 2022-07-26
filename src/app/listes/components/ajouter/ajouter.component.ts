@@ -32,7 +32,7 @@ export class AjouterComponent implements OnInit {
   RcaseOne=[1,];
   RcaseTwo=[2,];
 
- 
+
 
   public listeForm !: FormGroup;
   data:any={
@@ -145,6 +145,10 @@ export class AjouterComponent implements OnInit {
 
 
   }
+
+
+
+
 
 
 

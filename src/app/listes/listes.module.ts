@@ -7,7 +7,7 @@ import { GestionComponent } from './components/gestion/gestion.component';
 import { VoirComponent } from './components/voir/voir.component';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgToastModule } from  'ng-angular-popup';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -42,6 +42,7 @@ import { ModalComponent } from './components/modal/modal.component';
     AjouterComponent,
     TraiterComponent,
     ModalComponent,
+
   ],
   imports: [
     NgbPaginationModule, NgbAlertModule,
@@ -55,7 +56,7 @@ import { ModalComponent } from './components/modal/modal.component';
     MatInputModule,
     MatSelectModule,
     MatTabsModule,
-
+    MatCheckboxModule,
     HttpClientModule,
 
     ReactiveFormsModule,

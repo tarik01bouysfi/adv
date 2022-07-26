@@ -128,13 +128,19 @@
                 </mat-form-field>
           </td>
           <!-- MotifdeRefus -->
-          <td *ngIf="RcaseOne.includes(+listeForm.value.retenu?.id)">
+          <!-- <td *ngIf="RcaseOne.includes(+listeForm.value.retenu?.id)"> -->
+            <td *ngIf="true">
             <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Motif de Refus</mat-label>
                   <mat-select  formControlName="MotifdeRefus" class="matSelect">
                     <mat-option value="0" disabled > Motif de Refus </mat-option>
-                      <mat-option class="options" *ngFor="let MDRe of MotifdeRefusData" [value]="MDRe">{{MDRe.name}}
-                    </mat-option>
+                    <mat-option class="example-margin options" *ngFor="let MDRe of MotifdeRefusData" [value]="MDRe" >
+                    <mat-checkbox>
+                      {{MDRe.name}}
+                    </mat-checkbox>
+                  </mat-option>
+                      <!-- <mat-option class="options" *ngFor="let MDRe of MotifdeRefusData" [value]="MDRe">{{MDRe.name}} -->
+                    <!-- </mat-option> -->
             </mat-select>
               </mat-form-field>
         </td>

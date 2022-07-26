@@ -1,5 +1,5 @@
 import { ListesService } from './../../../services/listes.service';
-
+import * as XLSX from 'xlsx';
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -17,7 +17,9 @@ export class VoirComponent implements OnInit {
   array2:any=[];
   arra:any;
   id:any;
-  idk='XXX'
+  idk='XXX';
+  fileName = 'ExcelSheet.xlsx';
+  
   constructor(private route : ActivatedRoute , private service : ListesService ) { }
 
   async ngOnInit() {
@@ -42,8 +44,23 @@ export class VoirComponent implements OnInit {
     console.log(this.index);
   }
 
+  // EXPORT EXCEL
+  exportexcel(): void {
+    let element = document.getElementById('excel-table');
+    const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+
+      // GENERATE WORKBOOK AND ADD THE WORKSHEET
+      const wb: XLSX.WorkBook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+    //  SAVE TO FILE
+      XLSX.writeFile(wb, this.fileName);
+
 
   }
+
+
+}
 
 
 

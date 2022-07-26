@@ -8,10 +8,7 @@ div.scrollmenu {
 {
   /* background-color: rgb(246, 246, 246); */
   background-color: #fefefe;
-
-  margin: 10%;
-
-  padding-left: 20;
+  margin: 10% 28%;
 }
 .grey
 {
@@ -21,9 +18,8 @@ div.scrollmenu {
   color:black
 }
 div.scrollmenu {
-
-
-  background-color: #fed9ff;
+  /* background-color: #fed9ff; */
+  background-color: #f6dff7;
   width: auto;
   height: 900px;
   overflow-x: hidden;
@@ -31,6 +27,33 @@ div.scrollmenu {
   text-align: center;
   padding: 20px;
 
+}
+
+.buttons{
+  margin-left: 17.5%;
+  margin-top: 20px;
+}
+.icon-class {
+  position: absolute;
+  margin-left: -10px;
+}
+.cloud-class  {
+  position: absolute;
+  margin-left: -24px;
+}
+.btn-success{
+  padding-left: 30px;
+}
+.mainButton{
+
+  color: rgb(255, 255, 255);
+  padding-left: 30px;
+   background-color: rgb(225, 61, 178);
+}
+.mainButton:focus,
+.mainButton:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(228, 12, 148);
 }
 
 div.scrollmenuchilddiv {
