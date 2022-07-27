@@ -30,6 +30,8 @@ import { AjouterComponent } from './components/ajouter/ajouter.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { TraiterComponent } from './components/traiter/traiter.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { LoginComponent } from './components/login/login.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { ModalComponent } from './components/modal/modal.component';
     AjouterComponent,
     TraiterComponent,
     ModalComponent,
+    LoginComponent,
+    ErrorPageComponent,
 
   ],
   imports: [

@@ -1,3 +1,4 @@
+import { LoginComponent } from './components/login/login.component';
 import { TraiterComponent } from './components/traiter/traiter.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -8,10 +9,20 @@ import { GestionComponent } from './components/gestion/gestion.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { VoirComponent } from './components/voir/voir.component';
 import { AjouterComponent } from './components/ajouter/ajouter.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 const routes: Routes = [
-  // Sidenavwrapper Component acts like a shell & the active child Component gets rendered into the <router-outlet>
+
   {
+    path: '',
+    component: LoginComponent,
+  },
+  {
+    path: 'error404',
+    component: ErrorPageComponent,
+  },
+  {
+
     path: '',
     component: SidenavComponent,
     children: [
@@ -48,7 +59,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/listes',
+    redirectTo: '/error404',
     pathMatch: 'full'
   },
 
